@@ -14,7 +14,7 @@ export const render = Matter.Render.create({
 		width: window.innerWidth,
 		height: window.innerHeight,
 		wireframes: false,
-		background: "#f0f0f0",
+		background: "#fff",
 	},
 });
 
