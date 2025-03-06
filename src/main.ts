@@ -1,6 +1,5 @@
-import './style.css';
+import "./style.css";
 
-import './mechanics/engine';
-import './mechanics/slingshot';
-import './mechanics/walls';
-
+import "./mechanics/engine";
+import "./mechanics/slingshot";
+import "./mechanics/walls";
