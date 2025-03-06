@@ -28,13 +28,15 @@ function createSlingshotBall(x: number, y: number) {
         friction: 0.1,
         slop: 0.05,
     });
+	
     slingshotConstraint = Matter.Constraint.create({
         pointA: { x, y },
         bodyB: slingshotBall,
-        stiffness: 0.05,
+        stiffness: 0.00001,
 		render: {
 			visible: true,
-			strokeStyle: color
+			strokeStyle: color,
+			type: 'line',
 		},
     });
 	
@@ -46,9 +48,10 @@ function launchSlingshotBall() {
         const mousePosition = mouse.position;
         const ballPosition = slingshotBall.position;
         const forceMagnitude = 0.001;
+
         const force = {
-            x: (ballPosition.x - mousePosition.x) * forceMagnitude,
-            y: (ballPosition.y - mousePosition.y) * forceMagnitude,
+            x: (slingshotConstraint.pointA.x - mousePosition.x) * forceMagnitude,
+            y: (slingshotConstraint.pointA.y - mousePosition.y) * forceMagnitude,
         };
 
         Matter.Body.applyForce(slingshotBall, ballPosition, force);
