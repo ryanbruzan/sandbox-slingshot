@@ -9,7 +9,11 @@
 		"preview": "vite preview"
 	},
 	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@commitlint/cli": "^19.7.1",
+		"@commitlint/config-conventional": "^19.7.1",
 		"@types/matter-js": "^0.19.8",
+		"lefthook": "^1.11.2",
 		"typescript": "~5.7.2",
 		"vite": "^6.2.0",
 		"vite-tsconfig-paths": "^5.1.4"

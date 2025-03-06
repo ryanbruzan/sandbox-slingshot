@@ -1,0 +1,13 @@
+# Validate commit messages
+commit-msg:
+  commands:
+    "lint commit message":
+      run: npx commitlint --edit {1}
+
+# Lint and format code
+pre-commit:
+  commands:
+    "lint and format code":
+      glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
+      run: npx @biomejs/biome check --write --no-errors-on-unmatched --files-ignore-unknown=true --colors=off {staged_files}
+      stage_fixed: true
