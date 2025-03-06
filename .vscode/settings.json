@@ -1,0 +1,17 @@
+{
+	"typescript.tsdk": "node_modules/typescript/lib",
+	"typescript.enablePromptUseWorkspaceTsdk": true,
+	"typescript.preferences.importModuleSpecifier": "non-relative",
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "biomejs.biome",
+	"emmet.syntaxProfiles": {
+		"jsx": {
+			"markup.attributes": {
+				"class*": "className"
+			},
+			"markup.valuePrefix": {
+				"class*": "styles"
+			}
+		}
+	}
+}
