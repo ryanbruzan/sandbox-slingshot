@@ -6,10 +6,8 @@ const mouse = Matter.Mouse.create(render.canvas);
 const mouseConstraint = Matter.MouseConstraint.create(engine, {
     mouse: mouse,
     constraint: {
-        stiffness: 0.05,
-        render: {
-            visible: true,
-        },
+        stiffness: 1,
+        render: {visible: false},
     },
 });
 Matter.Composite.add(world, mouseConstraint);
