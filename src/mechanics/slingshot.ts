@@ -37,6 +37,7 @@ function createSlingshotBall(x: number, y: number) {
 			strokeStyle: color
 		},
     });
+	
     Matter.World.add(world, [slingshotBall, slingshotConstraint]);
 }
 
@@ -51,18 +52,20 @@ function launchSlingshotBall() {
         };
 
         Matter.Body.applyForce(slingshotBall, ballPosition, force);
-
         Matter.World.remove(world, slingshotConstraint);
+
         slingshotConstraint = null;
         slingshotBall = null;
     }
 }
 
 Matter.Events.on(mouseConstraint, 'mousedown', (event) => {
+	if (slingshotBall || slingshotConstraint) return;
     const { mouse } = event.source;
     createSlingshotBall(mouse.position.x, mouse.position.y);
 });
 
 Matter.Events.on(mouseConstraint, 'mouseup', () => {
+	if (!slingshotBall || !slingshotConstraint) return;
     launchSlingshotBall();
 });
